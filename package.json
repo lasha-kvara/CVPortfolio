@@ -1,7 +1,8 @@
+
 {
-  "name": "lasha-kvaratskhelia-|-test-automation-engineer",
+  "name": "lasha-kvaratskhelia-portfolio",
   "private": true,
-  "version": "0.0.0",
+  "version": "1.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -13,9 +14,14 @@
     "react-dom": "^19.2.4"
   },
   "devDependencies": {
-    "@types/node": "^22.14.0",
-    "@vitejs/plugin-react": "^5.0.0",
-    "typescript": "~5.8.2",
-    "vite": "^6.2.0"
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "@vitejs/plugin-react": "^4.3.1",
+    "autoprefixer": "^10.4.20",
+    "postcss": "^8.4.41",
+    "tailwindcss": "^3.4.10",
+    "typescript": "^5.5.3",
+    "vite": "^5.4.1",
+    "terser": "^5.31.6"
   }
 }
