@@ -1,3 +1,4 @@
+
 import React from 'react';
 
 interface SectionProps {
@@ -8,13 +9,16 @@ interface SectionProps {
 
 const Section: React.FC<SectionProps> = ({ id, title, children }) => {
   return (
-    <section 
-      id={id}
-    >
-      <h2 className="text-2xl sm:text-3xl font-bold text-slate-200 mb-8 sticky top-0 bg-slate-900/75 py-4 z-10 backdrop-blur-sm -mx-6 px-6 sm:-mx-8 sm:px-8 md:-mx-12 md:px-12">
-        {title}
-      </h2>
-      {children}
+    <section id={id} className="scroll-mt-24">
+      <div className="flex items-center gap-4 mb-12">
+        <h2 className="text-sm font-bold tracking-widest text-slate-200 uppercase whitespace-nowrap">
+          {title}
+        </h2>
+        <div className="h-px w-full bg-slate-700/50"></div>
+      </div>
+      <div className="relative">
+        {children}
+      </div>
     </section>
   );
 };

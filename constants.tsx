@@ -1,6 +1,5 @@
-
 import React from 'react';
-import { Skill, Experience, Project } from './types';
+import { Skill, Experience, Project } from './types.ts';
 
 export const LinkedInIcon: React.FC<{ className?: string }> = ({ className = 'w-8 h-8' }) => (
     <svg xmlns="http://www.w3.org/2000/svg" role="img" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}><title>LinkedIn</title><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
@@ -34,6 +33,7 @@ export const EmailIcon = () => (
 
 // SKILLS DATA
 export const SKILLS_DATA: Skill[] = [
+  // --- Languages (4) ---
   { 
     name: 'C#', 
     icon: <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
@@ -64,13 +64,8 @@ export const SKILLS_DATA: Skill[] = [
       <path strokeLinecap="round" strokeLinejoin="round" d="M10 16v-4a2 2 0 00-2-2H7M14 16c0-2 1-3 3-3"/>
     </svg>
   },
-  { 
-    name: 'HTML/CSS', 
-    icon: <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-      <path strokeLinecap="round" strokeLinejoin="round" d="M4 3l1.5 16.5L12 22l6.5-2.5L20 3z"/>
-      <path strokeLinecap="round" strokeLinejoin="round" d="M7 7h10M8 11h8M9 15h6"/>
-    </svg>
-  },
+
+  // --- Frameworks (8) ---
   { 
     name: 'Selenium', 
     icon: <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
@@ -95,23 +90,6 @@ export const SKILLS_DATA: Skill[] = [
     </svg>
   },
   { 
-    name: 'API Testing', 
-    icon: <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-      <path strokeLinecap="round" strokeLinejoin="round" d="M8 12h8M12 8v8"/>
-      <rect x="4" y="4" width="7" height="7" rx="1" strokeLinecap="round" strokeLinejoin="round"/>
-      <rect x="13" y="13" width="7" height="7" rx="1" strokeLinecap="round" strokeLinejoin="round"/>
-      <path strokeLinecap="round" strokeLinejoin="round" d="M11 7.5h2M16.5 11v2"/>
-    </svg>
-  },
-  { 
-    name: 'SQL', 
-    icon: <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-      <ellipse cx="12" cy="6" rx="8" ry="3" strokeLinecap="round" strokeLinejoin="round"/>
-      <path strokeLinecap="round" strokeLinejoin="round" d="M4 6v12c0 1.657 3.582 3 8 3s8-1.343 8-3V6"/>
-      <path strokeLinecap="round" strokeLinejoin="round" d="M4 12c0 1.657 3.582 3 8 3s8-1.343 8-3"/>
-    </svg>
-  },
-  { 
     name: 'NUnit', 
     icon: <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
       <circle cx="12" cy="12" r="9" strokeLinecap="round" strokeLinejoin="round"/>
@@ -125,6 +103,30 @@ export const SKILLS_DATA: Skill[] = [
       <path strokeLinecap="round" strokeLinejoin="round" d="M9 9l6 6M15 9l-6 6"/>
     </svg>
   },
+  { 
+    name: 'Appium', 
+    icon: <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+      <rect x="6" y="3" width="12" height="18" rx="2" strokeLinecap="round" strokeLinejoin="round"/>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M12 18h.01"/>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M9 9l3 3 3-3"/>
+    </svg>
+  },
+  { 
+    name: 'K6', 
+    icon: <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+      <path strokeLinecap="round" strokeLinejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+    </svg>
+  },
+  { 
+    name: 'Cucumber', 
+    icon: <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+      <path strokeLinecap="round" strokeLinejoin="round" d="M12 4c-4 0-7 3-7 7 0 4.5 3.5 8 7 8s7-3.5 7-8c0-4-3-7-7-7z"/>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M12 19c-1.5 1-2.5 3-2.5 4M12 19c1.5 1 2.5 3 2.5 4"/>
+      <circle cx="12" cy="10" r="1" fill="currentColor"/>
+    </svg>
+  },
+
+  // --- Tools & Infrastructure (7) ---
   { 
     name: 'Git', 
     icon: <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
@@ -144,17 +146,47 @@ export const SKILLS_DATA: Skill[] = [
     </svg>
   },
   { 
-    name: 'Appium', 
+    name: 'JMeter', 
     icon: <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-      <rect x="6" y="3" width="12" height="18" rx="2" strokeLinecap="round" strokeLinejoin="round"/>
-      <path strokeLinecap="round" strokeLinejoin="round" d="M12 18h.01"/>
-      <path strokeLinecap="round" strokeLinejoin="round" d="M9 9l3 3 3-3"/>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M3 12h18M3 6h18M3 18h18M7 3v18M12 3v18M17 3v18"/>
+      <circle cx="7" cy="12" r="1.5" fill="currentColor"/>
+      <circle cx="12" cy="6" r="1.5" fill="currentColor"/>
+      <circle cx="17" cy="18" r="1.5" fill="currentColor"/>
     </svg>
   },
   { 
-    name: 'K6', 
+    name: 'API Testing', 
     icon: <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-      <path strokeLinecap="round" strokeLinejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M8 12h8M12 8v8"/>
+      <rect x="4" y="4" width="7" height="7" rx="1" strokeLinecap="round" strokeLinejoin="round"/>
+      <rect x="13" y="13" width="7" height="7" rx="1" strokeLinecap="round" strokeLinejoin="round"/>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M11 7.5h2M16.5 11v2"/>
+    </svg>
+  },
+  { 
+    name: 'SQL', 
+    icon: <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+      <ellipse cx="12" cy="6" rx="8" ry="3" strokeLinecap="round" strokeLinejoin="round"/>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M4 6v12c0 1.657 3.582 3 8 3s8-1.343 8-3V6"/>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M4 12c0 1.657 3.582 3 8 3s8-1.343 8-3"/>
+    </svg>
+  },
+  { 
+    name: 'CI/CD', 
+    icon: <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+      <path strokeLinecap="round" strokeLinejoin="round" d="M4 12h16M12 4v16"/>
+      <circle cx="4" cy="12" r="2" stroke="currentColor"/>
+      <circle cx="20" cy="12" r="2" stroke="currentColor"/>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M10 8l2 2 4-4M10 16l2 2 4-4"/>
+    </svg>
+  },
+  { 
+    name: 'N8N', 
+    icon: <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+      <rect x="3" y="3" width="6" height="6" rx="1" strokeLinecap="round" strokeLinejoin="round"/>
+      <rect x="15" y="3" width="6" height="6" rx="1" strokeLinecap="round" strokeLinejoin="round"/>
+      <rect x="9" y="15" width="6" height="6" rx="1" strokeLinecap="round" strokeLinejoin="round"/>
+      <path d="M6 9v3h3m6-3v3h-3" strokeLinecap="round" strokeLinejoin="round"/>
     </svg>
   },
 ];
@@ -164,7 +196,7 @@ export const EXPERIENCE_DATA: Experience[] = [
   {
     duration: '2025 — PRESENT',
     company: 'Space International',
-    role: 'Test Automation Engineer',
+    role: 'SDET (Software Development in Test)',
     description: 'Responsible for ensuring the quality of the Internet Banking platform. My work involves creating and executing test plans, developing automation scripts, and collaborating with developers to deliver a seamless and secure user experience for financial services. The Mobile testing framework uses Appium to perform functional and regression tests on both iOS and Android platforms, significantly reducing manual testing effort and improving release cycles',
     technologies: ['Automation Testing', 'Mobile Testing', 'Appium', 'Java', 'Javascript', 'Selenium', 'Cucumber', 'BDD', 'API Testing', 'CI/CD', 'SQL', 'Kibana'],
   },
@@ -178,7 +210,7 @@ export const EXPERIENCE_DATA: Experience[] = [
   {
     duration: '2019 — 2020',
     company: 'VTB Bank Georgia',
-    role: 'Quality Assurance Engineer',
+    role: 'Test Automation Engineer',
     description: 'Focused on the quality assurance of both Internet and Mobile Banking applications. Conducted functional, regression, and usability testing to ensure applications met strict financial industry standards and provided a reliable user experience.',
     technologies: ['Automation Testing', 'Mobile Testing', 'SQL', 'API Testing'],
   },

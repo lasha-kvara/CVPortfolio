@@ -1,47 +1,41 @@
 
 import React, { useRef } from 'react';
-import Section from './Section';
-import { LinkedInIcon } from '../constants';
-import { useOnScreen } from '../hooks/useOnScreen';
-
-const AnimatedWrapper: React.FC<{ children: React.ReactNode; index: number }> = ({ children, index }) => {
-  const ref = useRef<HTMLDivElement>(null);
-  const isVisible = useOnScreen(ref);
-  return (
-    <div
-      ref={ref}
-      className={`transition-all duration-700 ease-out ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'}`}
-      style={{ transitionDelay: `${index * 100}ms` }}
-    >
-      {children}
-    </div>
-  );
-};
+import Section from './Section.tsx';
+import { LinkedInIcon } from '../constants.tsx';
+import { useOnScreen } from '../hooks/useOnScreen.ts';
 
 const Contact: React.FC = () => {
+  const ref = useRef<HTMLDivElement>(null);
+  const isVisible = useOnScreen(ref);
+
   return (
     <Section id="contact" title="Get In Touch">
-      <div className="text-center">
-        <AnimatedWrapper index={0}>
-          <p className="max-w-xl mx-auto mb-8">
-            I'm currently open to new opportunities and collaborations. Whether you have a question or just want to say hi, feel free to reach out. I'll do my best to get back to you!
-          </p>
-        </AnimatedWrapper>
-        <AnimatedWrapper index={1}>
+      <div 
+        ref={ref}
+        className={`max-w-2xl mx-auto text-center transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'}`}
+      >
+        <h3 className="text-3xl sm:text-5xl font-black text-slate-100 mb-6">Let's build something robust.</h3>
+        <p className="text-lg text-slate-400 mb-12">
+          I'm always open to discussing quality architecture, performance optimizations, or new leadership opportunities. My inbox is always open.
+        </p>
+        
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
           <a 
             href="mailto:Lkvara25@gmail.com" 
-            className="inline-block bg-teal-400/10 text-teal-300 font-medium text-lg py-4 px-8 rounded-md border border-teal-300/20 hover:bg-teal-400/20 transition-all duration-300"
+            className="w-full sm:w-auto px-10 py-5 bg-teal-400 text-slate-900 font-black uppercase tracking-widest rounded-xl hover:scale-105 transition-transform"
           >
-            Say Hello
+            Send Message
           </a>
-        </AnimatedWrapper>
-        <AnimatedWrapper index={2}>
-          <div className="flex justify-center gap-6 mt-12">
-            <a href="https://www.linkedin.com/in/lasha-kvaratskhelia-28a652200/" target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-teal-300 transition-colors duration-300">
-              <LinkedInIcon />
-            </a>
-          </div>
-        </AnimatedWrapper>
+          <a 
+            href="https://www.linkedin.com/in/lasha-kvaratskhelia-28a652200/" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            className="flex items-center gap-3 px-10 py-5 border border-slate-700 text-slate-100 font-bold rounded-xl hover:bg-slate-800 transition-colors"
+          >
+            <LinkedInIcon className="w-5 h-5" />
+            LinkedIn Profile
+          </a>
+        </div>
       </div>
     </Section>
   );

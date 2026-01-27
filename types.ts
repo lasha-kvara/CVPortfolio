@@ -1,4 +1,3 @@
-// Fix: Add missing import for React to resolve namespace error.
 import React from 'react';
 
 export interface Skill {

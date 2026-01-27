@@ -1,6 +1,6 @@
 
 import React, { useState, useEffect } from 'react';
-import { DownloadIcon, EmailIcon, LinkedInIcon, PhoneIcon } from '../constants';
+import { DownloadIcon, LinkedInIcon, GithubIcon } from '../constants.tsx';
 
 const Hero: React.FC = () => {
   const [isMounted, setIsMounted] = useState(false);
@@ -10,65 +10,66 @@ const Hero: React.FC = () => {
     return () => clearTimeout(timeout);
   }, []);
 
-  const handleContactClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
-    e.preventDefault();
-    const targetElement = document.getElementById('contact');
-    if (targetElement) {
-      const headerOffset = 80; // Header height + spacing
-      const elementPosition = targetElement.getBoundingClientRect().top;
-      const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: 'smooth',
-      });
-    }
-  };
+  const items = [
+    <div className="flex items-center gap-3 mb-6">
+      <span className="flex h-2 w-2 rounded-full bg-teal-400 animate-pulse"></span>
+      <span className="text-teal-300 font-mono text-xs tracking-[0.2em] uppercase">Status: Testing</span>
+    </div>,
+    <h1 className="text-5xl sm:text-8xl font-black text-slate-100 tracking-tight leading-none mb-4">
+      Lasha Kvaratskhelia
+    </h1>,
+    <h2 className="text-2xl sm:text-4xl font-bold text-slate-400 mb-8 max-w-2xl leading-tight">
+        Senior SDET 
+      <div>
+      <span className="text-slate-200">Software Development Engineer in Test </span> 
+      </div>
+    </h2>,
+    <p className="max-w-xl text-lg text-slate-400 leading-relaxed mb-12">
+      I bridge the gap between development and reliability. Specializing in high-concurrency frontend/backend testing, performance, mobile/web automation, and CI/CD integration.
+    </p>,
+    <div className="flex flex-wrap items-center gap-4 sm:gap-6">
+      <a 
+        href="https://drive.google.com/file/d/1Yku8pYhVu6SLznviEeZ4h9ej_jypVh7s/view?usp=sharing"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="group relative flex items-center gap-2 px-8 py-4 overflow-hidden rounded-xl bg-slate-800 border border-slate-700 font-bold text-slate-100 transition-all hover:scale-105 hover:border-teal-400/50 active:scale-95 shadow-xl shadow-black/20"
+      >
+        <DownloadIcon />
+        <span className="relative z-10">Resume</span>
+        <div className="absolute inset-0 bg-teal-400/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+      </a>
 
-  const one = <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-slate-200">Lasha Kvaratskhelia</h1>;
-  const two = <h2 className="mt-3 text-2xl sm:text-3xl lg:text-4xl font-semibold text-slate-300">Test Automation Engineer</h2>;
-  const three = <p className="mt-4 max-w-xl text-slate-400">I design and execute comprehensive testing strategies to ensure software quality and reliability. Specializing in both manual and automated testing across web and mobile platforms.</p>;
-  const four = (
-    <div className="mt-8">
-      <div className="flex flex-wrap items-center gap-x-6 gap-y-4 text-sm font-medium">
-        <a href="tel:+995555162724" className="flex items-center gap-2 text-slate-400 hover:text-teal-300 transition-colors duration-300">
-          <PhoneIcon />
-          <span>+995 555 16 27 24</span>
-        </a>
-        <a href="mailto:Lkvara25@gmail.com" className="flex items-center gap-2 text-slate-400 hover:text-teal-300 transition-colors duration-300">
-          <EmailIcon />
-          <span>Lkvara25@gmail.com</span>
-        </a>
-        <a href="https://www.linkedin.com/in/lasha-kvaratskhelia-28a652200/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn profile" className="text-slate-400 hover:text-teal-300 transition-colors duration-300">
-            <LinkedInIcon className="w-6 h-6" />
-        </a>
-      </div>
-      <div className="mt-8 flex flex-wrap gap-4">
-        <a href="#contact" onClick={handleContactClick} className="inline-block bg-teal-400/10 text-teal-300 font-medium py-3 px-6 rounded-md border border-teal-300/20 hover:bg-teal-400/20 transition-all duration-300">
-          Get In Touch
-        </a>
-        <a 
-          href="https://drive.google.com/file/d/1Yku8pYhVu6SLznviEeZ4h9ej_jypVh7s/view?usp=sharing" 
-          download="Lasha_Kvaratskhelia_CV.pdf"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-flex items-center bg-transparent text-teal-300 font-medium py-3 px-6 rounded-md border border-teal-300/20 hover:bg-teal-400/10 transition-all duration-300"
-        >
-          <DownloadIcon />
-          <span className="ml-2">Download CV</span>
-        </a>
-      </div>
+      <a 
+        href="https://www.linkedin.com/in/lasha-kvaratskhelia-28a652200/" 
+        target="_blank"
+        rel="noopener noreferrer"
+        className="group relative flex items-center gap-2 px-8 py-4 overflow-hidden rounded-xl bg-teal-400 font-bold text-slate-900 transition-all hover:scale-105 active:scale-95 shadow-xl shadow-teal-500/10"
+      >
+        <LinkedInIcon className="w-5 h-5" />
+        <span className="relative z-10">LinkedIn</span>
+        <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300"></div>
+      </a>
+      
+      <a 
+        href="http://github.com/lasha-kvara" 
+        target="_blank"
+        rel="noopener noreferrer"
+        className="group relative flex items-center gap-2 px-8 py-4 overflow-hidden rounded-xl bg-slate-800 border border-slate-700 font-bold text-slate-100 transition-all hover:scale-105 hover:border-teal-400/50 active:scale-95 shadow-xl shadow-black/20"
+      >
+        <GithubIcon />
+        <span className="relative z-10">GitHub</span>
+        <div className="absolute inset-0 bg-teal-400/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+      </a>
     </div>
-  );
-
-  const items = [one, two, three, four];
+  ];
 
   return (
-    <section id="hero" className="min-h-[60vh] flex flex-col justify-center">
+    <section id="hero" className="min-h-[70vh] flex flex-col justify-center">
       {items.map((item, i) => (
         <div
           key={i}
-          className={`transition-all duration-700 ease-out ${isMounted ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'}`}
-          style={{ transitionDelay: `${i * 150}ms` }}
+          className={`transition-all duration-1000 ease-out ${isMounted ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'}`}
+          style={{ transitionDelay: `${i * 100}ms` }}
         >
           {item}
         </div>

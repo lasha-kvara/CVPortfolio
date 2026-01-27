@@ -1,14 +1,10 @@
 
 import React, { useRef } from 'react';
-import Section from './Section';
-import { EXPERIENCE_DATA } from '../constants';
-import { useOnScreen } from '../hooks/useOnScreen';
+import Section from './Section.tsx';
+import { EXPERIENCE_DATA } from '../constants.tsx';
+import { useOnScreen } from '../hooks/useOnScreen.ts';
 
-interface ExperienceCardProps {
-  index: number;
-}
-
-const ExperienceCard: React.FC<ExperienceCardProps> = ({ index }) => {
+const ExperienceCard: React.FC<{ index: number; isLast: boolean }> = ({ index, isLast }) => {
   const item = EXPERIENCE_DATA[index];
   const ref = useRef<HTMLDivElement>(null);
   const isVisible = useOnScreen(ref);
@@ -16,20 +12,31 @@ const ExperienceCard: React.FC<ExperienceCardProps> = ({ index }) => {
   return (
     <div
       ref={ref}
-      className={`group grid md:grid-cols-8 gap-4 mb-12 transition-all duration-700 ease-out ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
+      className={`group relative grid sm:grid-cols-8 gap-8 mb-20 transition-all duration-1000 ease-out ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'}`}
       style={{ transitionDelay: `${index * 100}ms` }}
     >
-      <header className="md:col-span-2 text-xs font-semibold uppercase tracking-wide text-slate-500 mt-1">
+      <header className="sm:col-span-2 text-xs font-bold uppercase tracking-[0.2em] text-slate-500 pt-1.5">
         {item.duration}
       </header>
-      <div className="md:col-span-6">
-        <h3 className="text-lg font-semibold text-slate-200 group-hover:text-teal-300 transition-colors duration-300">{item.role} · {item.company}</h3>
-        <p className="mt-2 text-slate-400">{item.description}</p>
-        <ul className="mt-4 flex flex-wrap gap-2">
+
+      <div className="sm:col-span-6">
+        <h3 className="text-2xl font-bold text-slate-100 mb-1 group-hover:text-teal-300 transition-colors">
+          {item.role}
+        </h3>
+        <div className="text-teal-400 font-bold mb-4 flex items-center gap-2">
+          <span>{item.company}</span>
+          <span className="h-px w-8 bg-teal-400/20"></span>
+        </div>
+        <p className="text-slate-400 leading-relaxed text-base mb-6">
+          {item.description}
+        </p>
+        <div className="flex flex-wrap gap-2">
           {item.technologies.map((tech, i) => (
-            <li key={i} className="text-xs font-medium bg-teal-400/10 text-teal-300 py-1 px-3 rounded-full">{tech}</li>
+            <span key={i} className="px-2.5 py-1 text-[10px] font-black uppercase tracking-widest bg-slate-800/50 text-slate-400 border border-slate-800 rounded group-hover:border-teal-400/30 group-hover:text-teal-300 transition-all">
+              {tech}
+            </span>
           ))}
-        </ul>
+        </div>
       </div>
     </div>
   );
@@ -37,10 +44,14 @@ const ExperienceCard: React.FC<ExperienceCardProps> = ({ index }) => {
 
 const Experience: React.FC = () => {
   return (
-    <Section id="experience" title="Experience">
-      <div>
+    <Section id="experience" title="The Journey">
+      <div className="relative mt-12">
         {EXPERIENCE_DATA.map((_, index) => (
-          <ExperienceCard key={index} index={index} />
+          <ExperienceCard 
+            key={index} 
+            index={index} 
+            isLast={index === EXPERIENCE_DATA.length - 1} 
+          />
         ))}
       </div>
     </Section>

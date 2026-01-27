@@ -2,73 +2,67 @@ import React, { useState, useEffect } from 'react';
 
 const navLinks = [
   { href: '#about', label: 'About' },
-  { href: '#skills', label: 'Skills' },
-  { href: '#experience', label: 'Experience' },
-  { href: '#projects', label: 'Projects' },
+  { href: '#skills', label: 'Arsenal' },
+  { href: '#experience', label: 'Journey' },
+  { href: '#projects', label: 'Work' },
   { href: '#contact', label: 'Contact' },
 ];
 
 const Header: React.FC = () => {
-  const [activeLink, setActiveLink] = useState('#about');
   const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
-      
-      const sections = navLinks.map(link => document.getElementById(link.href.substring(1)));
-      let currentSection = '';
-
-      sections.forEach(section => {
-        if (section && window.scrollY >= section.offsetTop - 150) {
-          currentSection = `#${section.id}`;
-        }
-      });
-
-      if (currentSection !== activeLink) {
-        setActiveLink(currentSection);
-      }
+      setIsScrolled(window.scrollY > 20);
     };
-
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
-  }, [activeLink]);
+  }, []);
 
   const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
     e.preventDefault();
-    const targetId = href.substring(1);
-    const targetElement = document.getElementById(targetId);
-
-    if (targetElement) {
-      const headerOffset = targetId === 'hero' ? 0 : 80; // No offset for hero section
-      const elementPosition = targetElement.getBoundingClientRect().top;
-      const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: 'smooth'
+    const targetId = href.replace('#', '');
+    const element = document.getElementById(targetId);
+    if (element) {
+      element.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start',
       });
+      // Update URL hash without jumping
+      window.history.pushState(null, '', href);
     }
   };
 
   return (
-    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'bg-slate-900/80 backdrop-blur-sm shadow-lg' : 'bg-transparent'}`}>
-      <nav className="max-w-7xl mx-auto px-6 sm:px-8 md:px-12">
-        <div className="flex justify-between items-center h-16">
-          <a href="#hero" onClick={(e) => handleNavClick(e, '#hero')} className="text-2xl font-bold text-teal-300 hover:text-teal-400 transition-colors">LK</a>
-          <div className="hidden md:flex space-x-8">
-            {navLinks.map(({ href, label }) => (
-              <a
-                key={href}
-                href={href}
+    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-b ${
+      isScrolled 
+        ? 'py-4 bg-slate-900/80 backdrop-blur-md border-slate-800/50 shadow-2xl' 
+        : 'py-8 bg-transparent border-transparent'
+    }`}>
+      <nav className="max-w-7xl mx-auto px-6 flex justify-between items-center">
+        <a 
+          href="#hero" 
+          onClick={(e) => handleNavClick(e, '#hero')}
+          className="group flex items-center gap-2"
+        >
+          <div className="w-10 h-10 bg-teal-400 flex items-center justify-center rounded-lg font-bold text-slate-900 group-hover:rotate-6 transition-transform">
+            LK
+          </div>
+          <span className="hidden sm:inline font-bold text-slate-100 tracking-tight">Kvaratskhelia</span>
+        </a>
+        <ul className="flex items-center gap-4 sm:gap-8">
+          {navLinks.map(({ href, label }) => (
+            <li key={href}>
+              <a 
+                href={href} 
                 onClick={(e) => handleNavClick(e, href)}
-                className={`text-sm font-medium transition-all duration-200 ${activeLink === href ? 'text-teal-300 scale-110' : 'text-slate-400 hover:text-teal-300'}`}
+                className="text-[10px] sm:text-xs font-bold uppercase tracking-widest text-slate-400 hover:text-teal-300 transition-colors cursor-pointer"
               >
                 {label}
               </a>
-            ))}
-          </div>
-        </div>
+            </li>
+          ))}
+        </ul>
       </nav>
     </header>
   );

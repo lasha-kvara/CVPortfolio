@@ -1,7 +1,7 @@
 
 import React, { useRef } from 'react';
-import Section from './Section';
-import { useOnScreen } from '../hooks/useOnScreen';
+import Section from './Section.tsx';
+import { useOnScreen } from '../hooks/useOnScreen.ts';
 
 const AnimatedParagraph: React.FC<{ children: React.ReactNode; index: number }> = ({ children, index }) => {
   const ref = useRef<HTMLParagraphElement>(null);
@@ -19,10 +19,10 @@ const AnimatedParagraph: React.FC<{ children: React.ReactNode; index: number }> 
 
 const About: React.FC = () => {
   const paragraphs = [
-    `Hello!`,
-    `I'm Lasha, a dedicated Quality Assurance Engineer with a passion for ensuring software excellence. My career in tech began with troubleshooting and has grown into a comprehensive expertise in both manual and automated testing, backed by a degree in Computer Engineering.`,
-    `I have a proven track record of working on diverse projects, from banking applications to e-commerce platforms. I thrive in collaborative environments, working alongside development teams to identify issues early, streamline processes, and deliver high-quality products. My experience spans a wide range of tools and frameworks, including Selenium, Playwright, and Specflow BDD.`,
-    `My strong problem-solving skills, attention to detail, and commitment to continuous improvement allow me to tackle complex challenges effectively. I'm always eager to learn new technologies and contribute to building robust and reliable software.`,
+    `Hello,`,
+    `I'm Lasha, a dedicated Software Development Engineer in Test (SDET) with 6+ years of experience dedicated to building high-quality, reliable software systems. My career in tech began with troubleshooting and has grown into a comprehensive expertise in both manual and automated testing, backed by a degree in Computer Engineering.`,
+    `I have a proven track record of working on diverse projects, from banking applications to e-commerce platforms. I thrive in collaborative environments, working alongside development teams to identify issues early, streamline processes, and deliver high-quality products. My experience spans a wide range of tools and frameworks, including Selenium, Playwright, Appium and Specflow BDD.`,
+    `My strong problem-solving skills, attention to detail, and commitment to continuous improvement allow me to tackle complex challenges effectively. I'm always eager to learn new technologies, AI integrations and contribute to building robust and reliable software.`,
   ];
 
   return (
