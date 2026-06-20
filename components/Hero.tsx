@@ -19,17 +19,17 @@ const Hero: React.FC = () => {
       Lasha Kvaratskhelia
     </h1>,
     <h2 className="text-2xl sm:text-4xl font-bold text-slate-400 mb-8 max-w-2xl leading-tight">
-        Senior SDET 
-      <div>
-      <span className="text-slate-200">Software Development Engineer in Test </span> 
+      Senior Test Automation Engineer
+      <div className="text-lg sm:text-xl text-slate-500 mt-2">
+        <span className="text-slate-300">Software Development Engineer in Test (SDET)</span> 
       </div>
     </h2>,
     <p className="max-w-xl text-lg text-slate-400 leading-relaxed mb-12">
-      I bridge the gap between development and reliability. Specializing in high-concurrency frontend/backend testing, performance, mobile/web automation, and CI/CD integration.
+      Senior SDET with 7+ years bridging development and reliability. Architected test frameworks across 7+ platforms, delivering 5000+ automated test cases. Specializing in mobile/web automation, performance testing, and AI-assisted quality engineering.
     </p>,
     <div className="flex flex-wrap items-center gap-4 sm:gap-6">
       <a 
-        href="https://drive.google.com/file/d/1Yku8pYhVu6SLznviEeZ4h9ej_jypVh7s/view?usp=sharing"
+        href="https://drive.google.com/file/d/11A8X-Z3jXnAaZRwQeRj5IdKLVj1JD-Xs/view?usp=sharing"
         target="_blank"
         rel="noopener noreferrer"
         className="group relative flex items-center gap-2 px-8 py-4 overflow-hidden rounded-xl bg-slate-800 border border-slate-700 font-bold text-slate-100 transition-all hover:scale-105 hover:border-teal-400/50 active:scale-95 shadow-xl shadow-black/20"

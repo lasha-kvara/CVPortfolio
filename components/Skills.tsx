@@ -31,12 +31,12 @@ const SkillBadge: React.FC<{ skill: Skill; index: number }> = ({ skill, index })
 const Skills: React.FC = () => {
   // Categorize skills based on the updated counts:
   // Languages: 4 items (0 to 3)
-  // Frameworks: 8 items (4 to 11)
-  // Tools & Infrastructure: 7 items (12 to 18)
+  // Frameworks: 10 items (4 to 13)
+  // Tools & Infrastructure: 10 items (14 to 23)
   const categories = [
     { name: "Languages", items: SKILLS_DATA.slice(0, 4) },
-    { name: "Frameworks", items: SKILLS_DATA.slice(4, 12) },
-    { name: "Tools & Infrastructure", items: SKILLS_DATA.slice(12) }
+    { name: "Frameworks", items: SKILLS_DATA.slice(4, 14) },
+    { name: "Tools & Infrastructure", items: SKILLS_DATA.slice(14) }
   ];
 
   return (

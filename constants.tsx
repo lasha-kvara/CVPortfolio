@@ -125,8 +125,23 @@ export const SKILLS_DATA: Skill[] = [
       <circle cx="12" cy="10" r="1" fill="currentColor"/>
     </svg>
   },
+  { 
+    name: 'TestNG', 
+    icon: <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+      <path strokeLinecap="round" strokeLinejoin="round" d="M9 3v18M15 3v18M3 9h18M3 15h18"/>
+      <circle cx="9" cy="9" r="1.5" fill="currentColor"/>
+      <circle cx="15" cy="15" r="1.5" fill="currentColor"/>
+    </svg>
+  },
+  { 
+    name: 'JUnit', 
+    icon: <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+      <rect x="5" y="5" width="14" height="14" rx="2" strokeLinecap="round" strokeLinejoin="round"/>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4"/>
+    </svg>
+  },
 
-  // --- Tools & Infrastructure (7) ---
+  // --- Tools & Infrastructure (10) ---
   { 
     name: 'Git', 
     icon: <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
@@ -181,6 +196,28 @@ export const SKILLS_DATA: Skill[] = [
     </svg>
   },
   { 
+    name: 'Jira', 
+    icon: <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+      <path strokeLinecap="round" strokeLinejoin="round" d="M12 2L3 11l9 9 9-9-9-9z"/>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v12M6 12h12"/>
+    </svg>
+  },
+  { 
+    name: 'Agile/Scrum', 
+    icon: <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+      <circle cx="12" cy="12" r="9" strokeLinecap="round" strokeLinejoin="round"/>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v6l4 2"/>
+    </svg>
+  },
+  { 
+    name: 'SDLC', 
+    icon: <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+      <path strokeLinecap="round" strokeLinejoin="round" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4"/>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M16 8l-4 4-2-2"/>
+    </svg>
+  },
+  { 
     name: 'N8N', 
     icon: <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
       <rect x="3" y="3" width="6" height="6" rx="1" strokeLinecap="round" strokeLinejoin="round"/>
@@ -195,30 +232,30 @@ export const SKILLS_DATA: Skill[] = [
 export const EXPERIENCE_DATA: Experience[] = [
   {
     duration: '2025 — PRESENT',
-    company: 'Space International',
-    role: 'SDET (Software Development in Test)',
-    description: 'Responsible for ensuring the quality of the Internet Banking platform. My work involves creating and executing test plans, developing automation scripts, and collaborating with developers to deliver a seamless and secure user experience for financial services. The Mobile testing framework uses Appium to perform functional and regression tests on both iOS and Android platforms, significantly reducing manual testing effort and improving release cycles',
-    technologies: ['Automation Testing', 'Mobile Testing', 'Appium', 'Java', 'Javascript', 'Selenium', 'Cucumber', 'BDD', 'API Testing', 'CI/CD', 'SQL', 'Kibana'],
+    company: 'TBC Uzbekistan',
+    role: 'Senior Test Automation Engineer',
+    description: 'Architected multi-layer test automation framework (frontend, backend, API, WireMock, database) covering 200+ test scenarios for Internet Banking platform. Engineered Appium mobile automation suite for iOS & Android, reducing manual regression effort by ~60% and accelerating release cycles. Authored 100+ BDD automation scripts using Java, Cucumber and Selenium; integrated suites into CI/CD pipelines achieving consistent nightly runs. Executed functional, regression and smoke testing across financial services platform; managed defect tracking in Jira within Agile/Scrum sprints. Streamlined test generation using AI tools (GitHub Copilot, Claude), increasing scenario coverage by ~30%.',
+    technologies: ['Selenium', 'Appium', 'Java', 'Cucumber', 'CI/CD', 'API Testing', 'SQL', 'iOS/Android', 'Agile', 'AI Tools', 'WireMock', 'PostgreSQL'],
   },
   {
     duration: '2020 — 2025',
     company: 'Digital Area',
-    role: 'Test Automation Engineer',
-    description: 'Tested a variety of high-traffic web platforms including Biletebi.ge, Optimo, Area.ge and Extra.ge. Performed end-to-end manual and automated testing, identified and documented defects, and verified fixes to ensure robust performance across multiple projects.',
-    technologies: ['C#', 'Playwright', 'Selenium', 'JavaScript', 'Automation Testing', 'Specflow BDD', 'K6', 'API Testing'],
+    role: 'Senior Test Automation Engineer',
+    description: 'Spearheaded automation coverage across 4 concurrent high-traffic platforms (Biletebi.ge, Optimo, Extra.ge, Area.ge) over 5 years within Agile/Scrum teams. Engineered K6 + Playwright performance framework for Biletebi.ge; load-tested platform handling 500,000+ concurrent users; integrated real-time dashboards via Grafana and CI/CD. Architected 300+ automated test cases for Optimo from scratch using Selenium C#, NUnit and SpecFlow BDD; reduced regression cycle time by ~50%. Designed microservice API test suites for Extra.ge and Area.ge; authored and maintained 80+ API test scenarios using Postman and custom scripts. Partnered with 3–5 cross-functional developer teams daily; identified and tracked 200+ defects in Jira across the full SDLC.',
+    technologies: ['C#', 'Playwright', 'Selenium', 'SpecFlow BDD', 'K6', 'JavaScript', 'API Testing', 'Jira', 'CI/CD', 'Grafana', 'Agile', 'SDLC', 'NUnit'],
   },
   {
     duration: '2019 — 2020',
     company: 'VTB Bank Georgia',
-    role: 'Test Automation Engineer',
-    description: 'Focused on the quality assurance of both Internet and Mobile Banking applications. Conducted functional, regression, and usability testing to ensure applications met strict financial industry standards and provided a reliable user experience.',
-    technologies: ['Automation Testing', 'Mobile Testing', 'SQL', 'API Testing'],
+    role: 'Senior Test Automation Engineer',
+    description: 'Engineered automation suite of 150+ test cases from scratch in Java using REST Assured and Katalon Studio for Internet and Mobile Banking platforms within a 1-year engagement. Executed functional, regression and usability testing ensuring compliance with strict financial industry standards; achieved 0 critical defects in production over 6 months. Authored comprehensive test plans covering 100% of core user flows for web and mobile; validated APIs and databases using Postman and SQL. Managed and resolved 100+ defects in Jira; collaborated with cross-functional Agile teams across 2 simultaneous banking products.',
+    technologies: ['Java', 'REST Assured', 'Katalon Studio', 'API Testing', 'SQL', 'Postman', 'Jira', 'Mobile Testing', 'PostgreSQL'],
   },
   {
     duration: '2018 — 2019',
     company: 'Silknet',
     role: 'Technical Troubleshooter',
-    description: 'Provided technical support and troubleshooting for customers. Diagnosed and resolved a wide range of software and network issues, developing strong problem-solving skills and a deep understanding of application functions from a user perspective.',
+    description: 'Delivered technical support and troubleshooting for customers, diagnosing and resolving software and network issues. Gained deep understanding of application behavior from the end-user perspective; applied these insights to improve test case design in subsequent engineering roles.',
     technologies: ['Problem Solving', 'Bug Fixing', 'Customer Support', 'Technical Analysis'],
   },
 ];
@@ -226,9 +263,9 @@ export const EXPERIENCE_DATA: Experience[] = [
 // PROJECTS DATA
 export const PROJECTS_DATA: Project[] = [
   {
-    name: 'Space Internet Bank in Uzbekistan',
+    name: 'TBC Internet Bank in Uzbekistan',
     description: 'A comprehensive test automation framework developed for a complex internet banking project. The suite covers Front-end, Back-end, API, Mocking and database testing, ensuring end-to-end quality. It is designed to be scalable and maintainable, using the Page Object Model and BDD principles.',
-    technologies: ['Selenium', 'Java', 'TestNG', 'CI/CD', 'Wiremock .Net', 'Cucumber', 'Postgree', 'REST-assured', 'Appium', 'Android', 'IOS'],
+    technologies: ['Selenium', 'Java', 'TestNG', 'CI/CD', 'Wiremock .Net', 'Cucumber', 'PostgreSQL', 'REST Assured', 'Appium', 'Android', 'iOS'],
     liveUrl: 'https://www.spaceint.ge/',
   },
   {
@@ -257,8 +294,8 @@ export const PROJECTS_DATA: Project[] = [
   },
   {
     name: 'VTB Bank Georgia',
-    description: 'VTB Bank Georgia is online banking platform. I was developing test plan and test cases for Web and mobile application. I have developed Automation project in Java and Groovy from scratch.',
-    technologies: ['Java', 'API', 'Automation Testing', 'Manual Testing', 'Jira', 'Web', 'Android', 'iOS', 'Katalon Studio', 'Postgree'],
+    description: 'VTB Bank Georgia is online banking platform. I was developing test plan and test cases for Web and mobile application. I have developed Automation project in Java from scratch using REST Assured and Katalon Studio.',
+    technologies: ['Java', 'REST Assured', 'API', 'Automation Testing', 'Manual Testing', 'Jira', 'Web', 'Android', 'iOS', 'Katalon Studio', 'PostgreSQL'],
     liveUrl: 'https://vtb.ge',
   }
 ];
